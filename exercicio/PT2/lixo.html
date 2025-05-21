@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blocos Clicáveis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .bloco {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .ativo {
+      background-color: #e74c3c !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+    <div class="bloco"></div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.bloco').forEach(bloco => {
+      bloco.addEventListener('click', () => {
+        bloco.classList.toggle('ativo');
+      });
+    });
+  </script>
+</body>
+</html>
